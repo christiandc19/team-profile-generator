@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
-const fs = require("fs");
+const generateHTML = require("./generateHTML");
+const fs = require("fs"); 
 const Manager = require("./lib/Manager")
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -16,7 +17,6 @@ return inquirer
         name: "role",
         message: "Which team member would you like to add? (Required)",
         choices: ["Engineer", "Manager", "Intern"],
-        default: "Engineer"
     },
 
     {
@@ -85,14 +85,14 @@ return inquirer
     {
         type: "input",
         name: "email",
-        message: "What is the manager's email? (Required)",
+        message: "What is the Intern's email? (Required)",
         when: (data) => data.role === "Intern" 
     },
 
     {
         type: "input",
         name: "school",
-        message: "What is the manager's school? (Required)",
+        message: "What is the name of the Intern's school? (Required)",
         when: (data) => data.role === "Intern" 
     },
 
@@ -146,3 +146,4 @@ inquire()
     .catch(err => {
         console.log(err);
     })
+    
