@@ -20,80 +20,87 @@ return inquirer
     },
 
     {
+        when: (data) => data.role === "Manager" ,
         type: "input",
         name: "name",
-        message: "What is the manager's name? (Required)",
-        when: (data) => data.role === "Manager" 
+        message: "What is the manager's name? (Required)"
     },
 
     {
+        when: (data) => data.role === "Manager",
         type: "input",
         name: "id",
-        message: "What is the manager's id? (Required)",
-        when: (data) => data.role === "Manager" 
+        message: "What is the manager's id? (Required)"
     },
 
     {
+        when: (data) => data.role === "Manager",
         type: "input",
         name: "email",
-        message: "What is the manager's email? (Required)",
-        when: (data) => data.role === "Manager" 
+        message: "What is the manager's email? (Required)"
     },
 
     {
+        when: (data) => data.role === "Manager", 
         type: "input",
         name: "office",
-        message: "What is the manager's office number? (Required)",
-        when: (data) => data.role === "Manager" 
+        message: "What is the manager's office number? (Required)"
     },
 
     {
+        when: (data) => data.role === "Engineer",
         type: "input",
         name: "name",
-        message: "What is the engineer's name? (Required)",
-        when: (data) => data.role === "Engineer" 
+        message: "What is the engineer's name? (Required)"
     },
 
     {
+        when: (data) => data.role === "Engineer", 
         type: "input",
         name: "id",
-        message: "What is the engineer's id? (Required)",
-        when: (data) => data.role === "Engineer" 
+        message: "What is the engineer's id? (Required)"
     },
 
     {
+        when: (data) => data.role === "Engineer",
         type: "input",
         name: "email",
-        message: "What is the engineer's email? (Required)",
-        when: (data) => data.role === "Engineer" 
+        message: "What is the engineer's email? (Required)"
     },
 
     {
+        when: (data) => data.role === "Engineer",
+        type: "input",
+        name: "github",
+        message: "What is the engineer's Github Username? (Required)"
+    },
+
+    {
+        when: (data) => data.role === "Intern",
         type: "input",
         name: "name",
-        message: "What is the Intern's name? (Required)",
-        when: (data) => data.role === "Intern" 
+        message: "What is the Intern's name? (Required)"
     },
 
     {
+        when: (data) => data.role === "Intern",
         type: "input",
         name: "id",
-        message: "What is the intern's id? (Required)",
-        when: (data) => data.role === "Intern" 
+        message: "What is the intern's id? (Required)"
     },
 
     {
+        when: (data) => data.role === "Intern",
         type: "input",
         name: "email",
-        message: "What is the Intern's email? (Required)",
-        when: (data) => data.role === "Intern" 
+        message: "What is the Intern's email? (Required)"
     },
 
     {
+        when: (data) => data.role === "Intern",
         type: "input",
         name: "school",
-        message: "What is the name of the Intern's school? (Required)",
-        when: (data) => data.role === "Intern" 
+        message: "What is the name of the Intern's school? (Required)"
     },
 
     {
@@ -105,15 +112,15 @@ return inquirer
 ])
     .then((data) => {
         if (data.role === "Manager") {
-            const manager = new Manager(data.role, data.name, data.id, data.email, data.office);
+            const manager = new Manager(data.name, data.id, data.email, data.office);
             myTeam.push(manager);
         }
         if (data.role === "Engineer") {
-            const engineer = new Engineer(data.role, data.name, data.id, data.email, data.github);
+            const engineer = new Engineer(data.name, data.id, data.email, data.github);
             myTeam.push(engineer);
         }
         if (data.role === "Intern") {
-            const intern = new Intern(data.role, data.name, data.id, data.email, data.office);
+            const intern = new Intern(data.name, data.id, data.email, data.office);
             myTeam.push(intern);
         }
         if (data.newMember === "Yes") {

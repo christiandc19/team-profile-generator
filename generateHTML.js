@@ -1,39 +1,49 @@
 const generateManager = function (Manager) {
     return `
-    <div class="card" style="width: 18rem;">
-    <div class="card-body">
+    <div id="card">
+    <div class="card-body bg-primary">
       <h5 class="card-title">${Manager.name}</h5>
-      <p class="card-text">${Manager.id}</p>
-      <a href="mailto:${Manager.email}" class="card-link">${Manager.email}</a>
-      <a href="${Manager.office}" class="card-link">${Manager.office}</a>
+      <p class="card-text">Manager</p>
     </div>
-  </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID Number: ${Manager.id}</li>
+      <li class="list-group-item"><a href="mailto:${Manager.email}">Email: ${Manager.email}</a></li>
+      <li class="list-group-item"><p class="card-text mt-2">Office Number: ${Manager.office}</p></li>
+    </ul>
+    </div>
     `;
 }
 
 const generateEngineer = function (Engineer) {
     return `
-    <div class="card" style="width: 18rem;">
-    <div class="card-body">
+    <div id="card">
+    <div class="card-body bg-primary">
       <h5 class="card-title">${Engineer.name}</h5>
-      <p class="card-text">${Engineer.id}</p>
-      <a href="mailto:${Engineer.email}" class="card-link">${Engineer.email}</a>
-      <a href="https://github.com/${Engineer.github}" class="card-link">${Engineer.github}</a>
+      <p class="card-text">Engineer</p>
     </div>
-  </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID Number: ${Engineer.id}</li>
+      <li class="list-group-item"><a href="mailto:${Engineer.email}" class="card-link">${Engineer.email}</a></li>
+      <li class="list-group-item"><p class="card-text mt-2"><a href="https://github.com/${Engineer.github}">Github: ${Engineer.github}</a></p></li>
+    </ul>
+    </div>
     `;
 }
 
 const generateIntern = function (Intern) {
     return `
-    <div class="card" style="width: 18rem;">
-    <div class="card-body">
+    <div id="card">
+    <div class="card-body bg-primary">
       <h5 class="card-title">${Intern.name}</h5>
-      <p class="card-text">${Intern.id}</p>
-      <a href="mailto:${Intern.email}" class="card-link">${Intern.email}</a>
-      <p ${Intern.school} >${Intern.school}</p>
+      <p class="card-text">Intern</p>
     </div>
-  </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID Number: ${Intern.id}</li>
+      <li class="list-group-item"><a href="mailto:${Intern.email}">Email: ${Intern.email}</a></li>
+      <li class="list-group-item"><p ${Intern.school} >${Intern.school}</p>
+      </li>
+    </ul>
+    </div>
     `;
 
 }
@@ -57,7 +67,7 @@ generateHTML = (myTeam) => {
         }
 
         if (role === "Intern") {
-            const internCard = generateEngineer(employee);
+            const internCard = generateIntern(employee);
             arr.push(internCard);
         }
     }
@@ -96,7 +106,7 @@ return `
 
     <!-- Cards -->
 
-<div class="row mt-5" id="cards">
+<div class="row mt-5 mb-5" id="cards">
 
 ${cards}
 
