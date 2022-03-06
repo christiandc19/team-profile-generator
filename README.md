@@ -31,7 +31,7 @@
   ## DEPLOYMENT  
   ### https://christiandc19.github.io/team-profile-generator/
   ### https://github.com/christiandc19/team-profile-generator/
-  ### https://bootcampspot.instructuremedia.com/lti/launch?custom_arc_launch_type=embed&custom_arc_media_id=9bad8ff3-d9e3-4bf4-8770-3689822eac25-2178
+  ### https://bootcampspot.instructuremedia.com/embed/000f782f-36b4-4173-93dc-afcbfc6369c9
   ------------------
   ## QUESTIONS  
   ### If you have any questions, you may contact me at:
