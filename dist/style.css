@@ -20,6 +20,11 @@
     
     #header {
         text-align: center;
-        margin-top: 25px;
+        height: 100px;
+        width: 100vw;
+        background-color: rgb(231, 101, 118);
+    }
 
+    #header h1 {
+        padding-top: 20px;
     }
