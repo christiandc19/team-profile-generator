@@ -236,7 +236,7 @@ return inquirer
 }
 
 const writeFile = (data) => {
-    fs.writeFile("./index.html", data, err => {
+    fs.writeFile("./dist/index.html", data, err => {
         if (err) {
             throw err;
         } else {
